@@ -1,44 +1,30 @@
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="website_style.css">
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript">
-function scrollto(div)
-{
- $('html,body').animate(
- {
-  scrollTop: $("#"+div).offset().top
- },'slow');
-}
-</script>
-</head>
-<body>
-
-<div id="header">
- <li id="site_name">TalkersCode.com</li>
- <li onclick="scrollto('home');">HOME</li>
- <li onclick="scrollto('about');">ABOUT</li>
- <li onclick="scrollto('contact');">CONTACT</li>
-</div>
-
-<div id="home">
- <h1>Demo Of One Page Website Template Using HTML, CSS And jQuery<p>TalkersCode.com</p></h1>
- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus quam quis nibh fringilla sit amet consectetur lectus malesuada. Sed nec libero erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi nisi, rhoncus ut vestibulum ac, sollicitudin quis lorem. </p>
-</div>
-
-<div id="about">
- <p>In this tutorial we will show you how to create One Page Website Template Using HTML, CSS And jQuery.Now you can build simple and beautiful website quickly.</p>
- <p>TalkersCode.com is a complete destination to learn Web Development with Best, Fast and Easy Methods for those who is a novice and wants to be the Xpert in Web Development.</p>
- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus quam quis nibh fringilla sit amet consectetur lectus malesuada. Sed nec libero erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi nisi, rhoncus ut vestibulum ac, sollicitudin quis lorem. </p>
- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus quam quis nibh fringilla sit amet consectetur lectus malesuada. Sed nec libero erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi nisi, rhoncus ut vestibulum ac, sollicitudin quis lorem. </p>
-</div>
-
-<div id="contact">
-<h1>If you have any question or query you can contact us at <br>talkerscode@gmail.com <br><br>or you can fill the form below</h1>
-<input type="text" placeholder="Name">
-<textarea placeholder="Message"></textarea>
-<input type="submit" value="SEND">
-</div>
-
-</body>
-</html>
+<div class="ct" id="t1">
+ <div class="ct" id="t2">
+   <div class="ct" id="t3">
+     <div class="ct" id="t4">
+<section>  
+ <ul>
+   <a href="#t1"><li class="icon fa fa-home" id="uno"></li></a>
+   <a href="#t2"><li class="icon fa fa-keyboard-o" id="dos"></li></a>
+   <a href="#t3"><li class="icon fa fa-coffee" id="tres"></li></a>
+   <a href="#t4"><li class="icon fa fa-dribbble" id="cuatro"></li></a>
+ </ul>
+  <div class="page" id="p1">
+     <li class="icon fa fa-home"><span class="title">Home</span><span class="hint">Like this pen to see the magic!...<br/> Just kidding, it won't happen anything but I'll be really happy If you do so.</span></li>   
+  </div>
+  <div class="page" id="p2">
+    <li class="icon fa fa-keyboard-o"><span class="title">Type</span></li>
+  </div>  
+  <div class="page" id="p3">
+    <li class="icon fa fa-coffee"><span class="title">Coffee</span></li>
+  </div>
+  <div class="page" id="p4">
+   <li class="icon fa fa-dribbble"><span class="title">Dribbble</span><span class="hint"><a href="https://dribbble.com/rupok" target="_blank">Follow me on Dribbble</span></li>
+  </div>  
+	<p class="credit"> Original Pen by <a href="https://codepen.io/hrtzt/">Alberto Hartzet</a></p>
+</section>
+       
+     </div>
+     </div>
+   </div>
+  </div>
