@@ -57,29 +57,29 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     
     <!--ABOUT ME SLIDESHOW-->
   <div class="w3-content w3-display-container">
-      <img class="mySlides" src="https://hell0000000.files.wordpress.com/2017/06/born.png?w=660" style="width:100%">
-      <img class="mySlides" src="https://hell0000000.files.wordpress.com/2017/06/hhs-buddies-presents1.png?w=660" style="width:100%">
+      <img class="ms" src="https://hell0000000.files.wordpress.com/2017/06/born.png?w=660" style="width:100%">
+      <img class="ms" src="https://hell0000000.files.wordpress.com/2017/06/hhs-buddies-presents1.png?w=660" style="width:100%">
   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
   <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 </div>
 
 <script>
-var slideIndex = 1;
-showDivs(slideIndex);
+var slideI = 1;
+show(slideI);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+function incDivs(n) {
+  showDivs(slideI += n);
 }
 
-function showDivs(n) {
+function show(n) {
   var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
+  var x = document.getElementsByClassName("ms");
+  if (n > x.length) {slideI = 1}    
+  if (n < 1) {slideI = x.length}
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";  
   }
-  x[slideIndex-1].style.display = "block";  
+  x[slideI-1].style.display = "block";  
 }
 </script>
     
