@@ -13,6 +13,7 @@ html, body, section, .page {
   color: #fff;
   background: #374046;
   overflow: hidden;
+  text-decoration: none;
 }
 
 section {
@@ -45,6 +46,7 @@ section {
 ul {
  position: fixed; 
  z-index: 1;
+text-decoration: none;
 }
 #t1:target .page#p1 {
     transform: translateX(0);
@@ -112,6 +114,7 @@ ul {
   left: 0;
   /*right: 0;*/
   margin: auto;
+  text-decoration: none;
   height: 280px;
   width: 10%;
   padding: 0;
@@ -147,6 +150,7 @@ a {
 
 .hint a:hover {
   color: #FFF;
+  text-decoration: none;
 }
 
 .page .icon {
@@ -161,6 +165,7 @@ a {
   text-align: center;
   font-size: 80px;
   transform: translateX(360%);
+  text-decoration: none;
   line-height: 1.3;
 }
 
