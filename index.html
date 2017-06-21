@@ -55,6 +55,33 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <h2 class="w3-text-light-blue"> ONE PICTURE, 1000 WORDS</h2>
     <hr style="width:200px" class="w3-opacity">
     
+    <!--ABOUT ME SLIDESHOW-->
+  <div class="w3-content w3-display-container">
+      <img class="mySlides" src="https://hell0000000.files.wordpress.com/2017/06/born.png?w=660" style="width:100%">
+      <img class="mySlides" src="https://hell0000000.files.wordpress.com/2017/06/hhs-buddies-presents1.png?w=660" style="width:100%">
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
     
     
     <h3 class="w3-padding-16 w3-text-light-blue">MY SKILLS</h3>
