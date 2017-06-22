@@ -126,19 +126,32 @@ function carousel() {
    </div>
 
 <script>
-var myIndex2 = 0;
-carousell();
+var slideIndex = 1;
+showDivs(slideIndex);
 
-function carousell() {
-    var i2;
-    var x2 = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x2[i2].style.display = "none";  
-    }
-    myIndex2++;
-    if (myIndex2 > x.length) {myIndex2 = 1}    
-    x2[myIndex2-1].style.display = "block";  
-    setTimeout(carousell, 1500); // Change image every 2 seconds
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
 </script>
   <!-- End Portfolio Section -->
 </div>
