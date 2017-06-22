@@ -126,23 +126,19 @@ function carousel() {
    </div>
 
 <script>
-var slideIndex = 1;
-showDivs(slideIndex);
+var mi = 0;
+carousel2();
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
+function carousel2() {
+    var i;
+    var x2 = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x2.length; i++) {
+       x2[i].style.display = "none";  
+    }
+    mi++;
+    if (mi > x2.length) { mi = 1}    
+    x2[mi-1].style.display = "block";  
+    setTimeout(carousel2, 1500); // Change image every 2 seconds
 </script>
   <!-- End Portfolio Section -->
 </div>
