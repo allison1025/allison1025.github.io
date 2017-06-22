@@ -126,19 +126,19 @@ function carousel() {
    </div>
 
 <script>
-var mi = 0;
-carousel();
+var myIndex2 = 0;
+carousell();
 
-function carousel() {
+function carousell() {
     var i2;
     var x2 = document.getElementsByClassName("mySlides");
-    for (i2 = 0; i2 < x2.length; i2++) {
+    for (i = 0; i < x.length; i++) {
        x2[i2].style.display = "none";  
     }
-    mi++;
-    if (mi > x2.length) { mi = 1}    
-    x2[mi-1].style.display = "block";  
-    setTimeout(carousel, 1500); // Change image every 2 seconds
+    myIndex2++;
+    if (myIndex2 > x.length) {myIndex2 = 1}    
+    x2[myIndex2-1].style.display = "block";  
+    setTimeout(carousell, 1500); // Change image every 2 seconds
 </script>
   <!-- End Portfolio Section -->
 </div>
