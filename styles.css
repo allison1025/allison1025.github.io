@@ -302,3 +302,44 @@ footer p {
   padding-top: 1em;
   padding-bottom: 2em;
 }
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    /* Center icons
+    justify-content:center; */
+}
+
+.social-icons a {
+    border: solid 2px #000;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    display: grid;
+    border-radius: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    opacity: 0.4;
+    transition: all ease 0.3s;
+    font-size: 0;
+    grid-template-columns: 100%;
+    grid-template-rows: 100% 0;
+    justify-content: center;
+}
+
+.social-icons.social-icons-white a {
+    opacity: 0.6;
+    border-color: #fff;
+}
+
+.social-icons a:hover {
+    opacity: 1 !important;
+}
+
+.social-icons a img {
+    max-height: 5px;
+    align-self:center;
+    display:block;
+    margin:auto;
+}
