@@ -1,163 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <title>ALLISON YIH</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-  <style>
-@import "compass/css3";
 
-* {
-  box-sizing: border-box;
-}
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400|Julius+Sans+One|Lato:100,300,300i,400,400i,700,900|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=stonewash|3d-float|3d|destruction|scuffed-steel|canvas-print|shadow-multiple">
+<script src="https://kit.fontawesome.com/d9fcbb4b37.js"></script>
 
-body {
-  background-color: #E8DBC5;
-  font: 3em 'PT Sans', sans-serif;
-}
-
-::selection {
-  background-color: #C3A29E;
-}
-
-.tabbed {
-  width: 700px;
-  margin: 50px auto;
-}
-
-.tabbed > input {
-  display: none;
-}
-
-.tabbed > label {
-  display: block;
-  float: left;
-  padding: 12px 20px;
-  margin-right: 5px;
-  cursor: pointer;
-  transition: background-color .3s;
-}
-
-.tabbed > label:hover,
-.tabbed > input:checked + label {
-  background: #C3A29E;
-}
-
-.tabs {
-  clear: both;
-  perspective: 600px;
-}
-
-.tabs > div {
-  width: 700px;
-  position: absolute;
-  border: 2px solid #C3A29E;
-  padding: 10px 30px 40px;
-  line-height: 1.4em;
-  opacity: 0;
-  transform: rotateX(-20deg);
-  transform-origin: top center;
-  transition: opacity .3s, transform 1s;
-  z-index: 0;
-}
-
-#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
-#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
-#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
-#tab-nav-4:checked ~ .tabs > div:nth-of-type(4){
-  transform: rotateX(0);
-  opacity: 1;
-  z-index: 1;
-}
-
-@media screen and (max-width: 700px) {
-  .tabbed { width: 400px }
-  .tabbed > label { display: none }
-  .tabs > div {
-    width: 400px;
-    border: none;
-    padding: 0;
-    opacity: 1;
-    position: relative;
-    transform: none;
-    margin-bottom: 60px;
-  }
-  .tabs > div h2 {
-    border-bottom: 2px solid #4EC6DE;
-    padding-bottom: .5em;
-  }
-}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Portfolio</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
-  
-  <head>
-<meta name="description" content="CSS Tabs" />
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.0.1/normalize.css">
-<link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-<title>CSS Tabs</title>
-<meta charset=utf-8>
-    
-</head>
-  
 <body>
-  <div class="tabbed">
-    <input type="radio" name="tabs" id="tab-nav-1" checked>
-    <label for="tab-nav-1">home</label>
-    <input type="radio" name="tabs" id="tab-nav-2">
-    <label for="tab-nav-2">about</label>
-    <input type="radio" name="tabs" id="tab-nav-3">
-    <label for="tab-nav-3">work</label>
-    <input type="radio" name="tabs" id="tab-nav-4">
-    <label for="tab-nav-4">contact me</label>
-    <div class="tabs">
-      
-      <div><h2><strong>hey, what's up, hello!!</strong></h2><p> i'm allison -- a sf-based data scientist and vegan food blogger. </p> <p> currently a rising senior at uc santa barbara studying data science. </p><p>interested in pursuing an analytics role in the healthcare industry.</p></div>
-      
-      
-      <div><h2><strong>i am</strong></h2><p> 
-        <ul>
-          <li>working on writing my bio - stay tuned!! </li>
-        </ul>            
-           </p></div>
-    
-    <div><h2><strong>things i've made </strong></h2><p>
-        <ul>
-          <li>
-        3 java plugins
-          </li>
-          <li>
-        a property cost calculator using react.js
-          </li>
-          <li>
-        a time series forecast on grand canyon visitors
-          </li>
-          <li>
-        a machine learning classifier on successful applicants to an elite university
-          </li>
-        </ul>
-        </p></div>
+  <header>
+    <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/favicon.png?token=AC6QCOCEYJNYJM4B4WVDCE27I3WYA" class="logo" alt="Personal Portfolio Logo">
+    <nav>
+      <ul>
+        <li><a href="#about-textbox">about</a></li>
+        <li><a href="#projects">work</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+  </header>
   
-      <div> 
-        <h2><strong>get in touch :~) </strong></h2>
-        <p>linkedin: linkedin.com/in/allisonyih</p>
-        <p>email: allisonyih@ucsb.edu</p>
-        <p>github: github.com/allison1025</p>
-        <p>instagram: instagram.com/hungryih</p>
-        
-     </div>
+  <section id="home" class="home-hero">
+    <div class="container">
+      <h1 class="name">allison y</h1>
+      <h2 class="occupation"><em>aspiring data scientist</em></h2>
+      <a href="#projects" class="button button-accent">See My Work</a>
     </div>
+  </section>
+  
+  <div class="container">
+  <section id="about" class="home-about">
+    <div class="home-about-textbox" id="about-textbox">
+      <h1>Who I Am</h1>
+      <p>etc</p>
+      <p>etc</p>
+    </div>
+  </section>
   </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.6/prefixfree.min.js"></script>
+  
+  <section class="portfolio">
+    <h1 class="my-projects name" id="projects">some things i've created</h1>
+    
+    <!-- Disney Favorites Survey -->
+    
+    <div class="port-items">
+    <figure class="port-item">
+      <img src="https://github.com/EChin179/images/blob/master/Disney%20Favorites%20Survey%20Capture.PNG?raw=true" alt="Disney Favorites Survey">
+      <figcaption class="port-desc">
+        <p>Disney Favorites Survey</p>
+        <a href="https://codepen.io/evelynchin/full/zYOBZOB" target="_blank" class="button button-accent button-small">See Project</a>
+      </figcaption>
+    </figure>
+    
+    <!-- Walt Disney Tribute Page -->
+    
+    <figure class="port-item">
+      <img src="https://github.com/EChin179/images/blob/master/Walt%20Disney%20Capture.PNG?raw=true" alt="Walt Disney Tribute Page">
+      <figcaption class="port-desc">
+        <p>Walt Disney Tribute</p>
+        <a href="https://codepen.io/evelynchin/full/dybXNWp" target="_blank" class="button button-accent button-small">See Project</a>
+      </figcaption>
+    </figure>
+
+    <!-- Walt Disney Shop Product Page -->
+    
+    <figure class="port-item">
+      <img src="https://github.com/EChin179/images/blob/master/Walt%20Disney%20Shop%20Capture.PNG?raw=true" alt="Walt Disney Shop Product Page">
+      <figcaption class="port-desc">
+        <p>Walt Disney Shop Product Page</p>
+        <a href="https://codepen.io/evelynchin/full/MWgerOe" target="_blank" class="button button-accent button-small">See Project</a>
+      </figcaption>
+    </figure>
+      
+    <!-- HTML Documentation Page -->
+    
+    <figure class="port-item">
+      <img src="https://github.com/EChin179/images/blob/master/HTML%20Documentation%20Page%20Capture.PNG?raw=true" alt="HTML Documentation Page">
+      <figcaption class="port-desc">
+        <p>HTML Documentation Page</p>
+        <a href="https://codepen.io/evelynchin/full/WNexzzg" class="button button-accent button-small" target="_blank">See Project</a>
+      </figcaption>
+    </figure>
+    </div>  
+  </section>
+  
+  <section class="cta" id="contact">
+      <h1 class="name name-cta">get in touch</h1>
+      <div class="container contact-links">
+        <a href="https://linkedin.com/in/allisonyih" class="button button-dark" target="_blank">linkedin</a>
+        <a href="mailto:allieyih@gmail.com" class="button button-dark">email</a>
+        <a href="https://instagram.com/hungryih" class="button button-dark">instagram</a> 
+      </div>
+  </section>
+  
+  <footer>
+    
+   
+    
+  </footer>
+  
 </body>
-  
-  
 </html>
