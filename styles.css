@@ -171,11 +171,11 @@ nav a:focus {
 .home-about-textbox {
   background-color: #232323;
   padding: 4em;
-  left: 0;
+  left: -15px;
   right: 0;
   margin: 0 -2.45vw;
   outline: 2px solid #bdadac;
-  outline-offset: -2.5em;
+  outline-offset: -2em;
   color: #FFF;
   position: relative;
 }
