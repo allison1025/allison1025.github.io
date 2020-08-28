@@ -27,7 +27,7 @@ footer::after {
   display: block;
   clear: both;
 }
- 
+
 /* typography */
 
 h1 {
@@ -170,9 +170,8 @@ nav a:focus {
 
 .home-about-textbox {
   background-color: #232323;
-  padding: 4em;
+  padding: 6em;
   left: -15px;
-  right: 0;
   margin: 0 -2.45vw;
   outline: 2px solid #bdadac;
   outline-offset: -2em;
@@ -213,15 +212,15 @@ nav a:focus {
     background-size: cover;
     background-position: 50% 70%;
     height: 100vh;
-    left: 0;
+    left: -15px;
     right: 0;
     margin: 0 -2.46vw;
   }
   
   .home-about-textbox {
-    width: 45%;
+    width: 85%;
     margin-left: 5%;
-    top: -4.5em;
+    top: 1.5em;
     text-align: left;
     box-shadow: 0 0 4em 0 rgba(0, 0, 0, 0.4);
     padding: 4.5em;
@@ -303,43 +302,27 @@ footer p {
   padding-bottom: 2em;
 }
 
-.social-icons {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-    /* Center icons
-    justify-content:center; */
+.social, links a {
+  display: block;
+  position: relative;
+  color: black;
+}
+header div.social {
+  padding-bottom: 5%;
+  color: #fff;
 }
 
-.social-icons a {
-    border: solid 2px #000;
-    height: 25px;
-    width: 25px;
-    text-align: center;
-    display: grid;
-    border-radius: 50px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    opacity: 0.4;
-    transition: all ease 0.3s;
-    font-size: 0;
-    grid-template-columns: 100%;
-    grid-template-rows: 100% 0;
-    justify-content: center;
+div.social-link {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  width: 50px;
+  margin: 5px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  color: #111;
 }
 
-.social-icons.social-icons-white a {
-    opacity: 0.6;
-    border-color: #fff;
-}
-
-.social-icons a:hover {
-    opacity: 1 !important;
-}
-
-.social-icons a img {
-    max-height: 15px;
-    align-self:center;
-    display:block;
-    margin:auto;
+a .fa {
+  color: #fff;
 }
