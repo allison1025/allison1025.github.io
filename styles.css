@@ -478,8 +478,9 @@ div.social-link {
 .video-gallery {
   position: relative;
   margin: 0 auto;
-  max-width: 950px;
   text-align: center;
+   display: flex;
+  justify-content: center;
 }
 
 .video-gallery .gallery-item {
@@ -487,29 +488,28 @@ div.social-link {
   float: left;
   overflow: hidden;
   margin: 10px 1%;
-  min-width: 30px;
-  max-width: 580px;
-  max-height: 360px;
-  width: 48%;
-  cursor: pointer;
+  text-align: left;  
+  width: 100%;
+  max-width: 500px;
+  height: 200px;
 }
 
 .video-gallery .gallery-item img {
   position: relative;
   display: block;
-  opacity: .75;
-  width: 105%;
-  height: 300px;
+  opacity: .45; 
+  height: 310px;
+  max-width: 500%;
   transition: opacity 0.45s, transform 0.35s;
   transform: translate3d(-23px, 0, 0);
   backface-visibility: hidden;
 }
 
 .video-gallery .gallery-item .gallery-item-caption {
-  padding: 2em;
+  padding: 1em;
   color: black;
   text-transform: uppercase;
-  font-size: 15px;
+  text-align: left;
 }
 
 .video-gallery .gallery-item .gallery-item-caption,
@@ -523,6 +523,7 @@ div.social-link {
 
 .video-gallery .gallery-item h2 {
   font-weight: 300;
+  font-size: 150%;
   overflow: hidden;
   padding: 0.5em 0;
 }
@@ -537,7 +538,7 @@ div.social-link {
 
 .video-gallery .gallery-item p {
   letter-spacing: 1px;
-  font-size: 68%;
+  font-size: 60%;
 
   padding: 1em 0;
   opacity: 0;
