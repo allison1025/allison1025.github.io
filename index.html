@@ -6,7 +6,7 @@
   <title>allison yih</title>
   <meta name="description" content="personal portfolio">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="google-site-verification" content="733BaLW9Mq9DSQNjtf13g_-JLqqxe0UJo7D8dnjmzd0" />
   <!--<link rel="stylesheet" href="https://samiralibabic.github.io/portfolio/css/normalize.css">-->
   
   <link href="styles.css" rel="stylesheet" type="text/css">
@@ -51,6 +51,57 @@
     });
 });
 </script> 
+	
+<script>
+filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("gallery-item");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1); 
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
 </head>
 
 <body>
@@ -78,36 +129,35 @@
      <h1 class="name">  <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/favicon.png?token=AC6QCOCEYJNYJM4B4WVDCE27I3WYA"  alt="Personal Portfolio Logo"></h1>
    
     <h2 id="main-subheading"><i>data scientist and developer</i></h2>
-    
-       <!-- <img class = "intro-img" src = "https://github.com/allison1025/allison1025.github.io/blob/master/Untitled-1.png?raw=true"></img> -->
- 
   </div>
 </header>
+	
 <section id="intro" class="row">
   <div class="col-sm-6 col-md-6 col-lg-6">
-    <h3></span><br>hello, nice to meet you!!</h3>
+	  <h3><span></span>
+		  <br>hello, nice to meet you!!</br>
+	  </h3>  
+	
     <p style = "text-align: left">
      I’m Allison Yih: a San Francisco-based data scientist and vegan foodie. I'm passionate about using big data analytics to extract insights that answer society’s lingering questions.
     </p>
     
     <p style = "text-align: left">
-      Before jumping into the world of big data, I studied viola for a decade. During this time, I’ve realized each piece has a story that must be woven together. To achieve that, I began to deeply interpret the relationships between the notes and the musical symbols to craft the story they tell together.</p>
-  
-    <p style = "text-align: left"> Through my music background, I’ve learned to value the power of storytelling in my technical career. Like expressing the unwritten emotions in each measure of music, I believe in synthesizing seemingly-different information (numbers with qualitative research) to effectively communicate cohesive insights behind the data, which others can utilize to make well-informed decisions.  </p>
+      Before jumping into the world of big data, I studied viola for a decade. During this time, I’ve realized each piece has a story that must be woven together. To achieve that, I began to deeply interpret the relationships between the notes and the musical symbols to craft the story they tell together. 
+	</p>
+	
+	<p style = "text-align: left">
+	Through my music background, I’ve learned to value the power of storytelling in my technical career. Like expressing the unwritten emotions in each measure of music, I believe in synthesizing seemingly-different information (numbers with qualitative research) to effectively communicate cohesive insights behind the data, which others can utilize to make well-informed decisions.  </p>
   
     <p style = "text-align: left">Outside of work, you can find me
         <ul>
-          <li style = "font-size:1.6rem; margin-left: 50px">  <a href="https://instagram.com/hungryih/" target="_blank">blogging</a> about my worldwide cafe-hopping adventures in search of the best matcha latte </li> 
+          <li style = "font-size:16px; margin-left: 50px">  <a href="https://instagram.com/hungryih/" target="_blank">blogging</a> about my worldwide cafe-hopping adventures in search of the best matcha latte </li> 
            <p></p>
-	  <li style = "font-size:1.6rem; margin-left: 50px">  <a href="https://www.michigandaily.com/research/a-breakdown-of-the-university-of-michigans-vaccination-tiering/" target="_blank">designing</a> infographics for the michigan daily </li> 
-           <p></p> 
-          <li style = "font-size:1.6rem; margin-left: 50px">geeking out on productivity and minimalism articles + podcasts</li> 
-          <p></p> 
-          <li style = "font-size:1.6rem; margin-left: 50px">hiking at golden hour</li>
+          <li style = "font-size:16px; margin-left: 50px">backpacking <i>(next on my bucketlist? colorado's devil's thumb)</i></li>
         </ul> 
-      </p>
+    </p>
 
-    <p style = "text-align: left"> As someone with diverse interests, I constantly strive to learn new things everyday and expand my technical skillset. Feel free to  <a href="#contact" target = "_self">connect</a> with me if you'd like to chat! </p>
+    <p style = "text-align: left"> As someone with diverse interests, I constantly strive to learn new things everyday and expand my technical skillset. Feel free to  <a href="#contact" target = "_self">connect</a> with me if you'd like to chat!! </p>
   </div>
   
  
@@ -119,8 +169,17 @@
 
 <section id="projects" class="row">
   <h3 class="text-center">some projects i've built</h3><br>
+	
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('technical')"> Technical</button>
+  <button class="btn" onclick="filterSelection('design')"> Design</button>
+  <button class="btn" onclick="filterSelection('marketing')"> Marketing + Business</button>
+</div>
+
   <div class="video-gallery">
-    <div class="gallery-item">
+	  
+    <div class="gallery-item technical">
       <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/covid-map.png" />
       <div class="gallery-item-caption">
         <div>
@@ -128,82 +187,84 @@
           <p>A Machine Learning model that simulates the effectiveness of intervention programs targeting COVID-19's  risk indicator, in order to recommend measures that'd decrease neighborhood disease vulnerability</p>
         </div>
       </div>
-    </div>
+	  </div>
 
 	  
-	   <div class="gallery-item">
-      <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/polylayoutscreenshot.png" />
-      <div class="gallery-item-caption">
-        <div>
-          <h2>PolyLayout</h2>
-          <p>a plugin that displays a molecular interaction dataset's unique categories as an interactive and uniquely structured polygon</p>
-        </div>
-        <a href="https://drive.google.com/file/d/1vhcQPF2voPNnNxf_PbYA1u85s1fxxjQ_/view?usp=sharing"></a>
-      </div>
-    </div>
-	  
-	  <div class="gallery-item">
-      <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/canyon.jpg" />
-      <div class="gallery-item-caption">
-        <div>
-          <h2>grand canyon visitor forecast</h2>
-          <p>an univariate time series model that predicts the number of national park visitors with 95% accuracy, which provides park administrators with detailed information about visitor trends that'd help them forecast spending and regulate park resources</p>
-        </div>
-        <a href="https://github.com/allison1025/stat174-forecast/blob/master/pstat174final.Rmd"></a>
-      </div>
-    </div>
- 
-	  
-	</div>
-	</div>
-	
-	
-  <div class="content">
-  <div class="video-gallery">
-
-    <div class="gallery-item ">
-      <img src="https://github.com/allison1025/allison1025.github.io/blob/master/Screen%20Shot%202020-07-08%20at%203.36.36%20PM.png?raw=true" />
-      <div class="gallery-item-caption">
-        <div>
-          <h2>blue shield newsletter</h2>
-          <p>a data-driven design refresh to the blue shield competitive intelligence team's newsletter template</p>
-        </div>
-	      
-      </div>
-    </div>
-	  
-	  	     <div class="gallery-item ">
+    <div class="gallery-item technical">
       <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/cyplot.png" />
       <div class="gallery-item-caption">
         <div>
-          <h2>cyplot</h2>
-          <p>a protein data visualization application that integrates plotly.js graphing apis, allowing users to view and save their plots online</p>
+          <h2>CyPlot </h2>
+          <p> A protein data visualization application that integrates plotly.js graphing apis, allowing users to view and save their plots online</p>
         </div>
-        <a href="https://drive.google.com/file/d/1mb_ErEFwdPg71Yq9ZimfaA9A-OFAOIvs/view?usp=sharing"></a>
       </div>
-    </div>
-	  
-	  
-	      <div class="gallery-item">
-      <img src="https://github.com/allison1025/allison1025.github.io/blob/master/cs190.png?raw=true" />
+	  </div>
+
+	   <div class="gallery-item technical design">
+      <img src="https://github.com/allison1025/allison1025.github.io/blob/master/Screen%20Shot%202020-07-08%20at%203.36.36%20PM.png?raw=true" />
       <div class="gallery-item-caption">
         <div>
-          <h2>COVID-19 viral discharge model</h2>
-          <p>a python simulation that predicts COVID-19 SIR curves in a population, and then determines how fair, effective, and affordable potential intervention policies are</p>
+          <h2>Blue Shield Newsletter  </h2>
+          <p>A data-driven design refresh to the Blue Shield competitive intelligence team's newsletter template</p>
         </div>
-        <a href="https://docs.google.com/presentation/d/1IFQuYMBWt16J20AgQxdZ6TshtBGeJgW2UGVC4uPAQiE/edit?usp=sharing"></a>
       </div>
-    </div>
-	  
-	  
 	  </div>
-</div>  
+	  
+	    <div class="gallery-item marketing">
+      <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/coffee%20grid.png" />
+      <div class="gallery-item-caption">
+        <div>
+          <h2>Cajé Coffee </h2>
+          <p>Social Media Manager + Stylist -- edit and publish regularly-scheduled content on Instagram, maintaining a visually-appealing aesthetic.</p>
+        </div>
+      </div>
+	  </div>
+	  
+	</div> <!-- end first row --> 
+	
+	  <div class="video-gallery">
+		  <div class="gallery-item design">
+		  <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/mich1.png" />
+		  <div class="gallery-item-caption">
+			<div>
+			  <h2>The Michigan Daily</h2>
+			  <p>Infographic designed for a news article</p>
+			</div>
+		  </div>
+		  </div>
+		  
+		  
+	  </div>
 	  
     <h2></h2>
      <p style="text-align:center">more details regarding my work experiences can be found on my <a href="https://drive.google.com/file/d/1qdjvWE8Z7yfnnmkHcpB75wyfRStnUxiL/view?usp=sharing" target="_blank">resume</a></p>
      
 </section>
 
+<section id="contact" class="row">
+ <h3 class="text-center">get in touch</h3>
+  <div class="col-xs-10 col-xs-offset-1 text-center">
+    <p>i'd love to connect with you!! :) 
+     </p>
+    
+     <div class="social-link">
+      <a href="https://linkedin.com/in/allisonyih" target="_blank"><i class="fa fa-linkedin fa-xs"></i></a>
+    </div>
+    
+        <div class="social-link">
+      <a href="mailto:allieyih@gmail.com" target="_blank"><i class="fa fa-envelope fa-xs"></i></a>
+    </div>
+	  
+	    <div class="social-link">
+      <a href="https://github.com/allison1025" target="_blank"><i class="fa fa-github fa-xs"></i></a>
+    </div>
+    
+  </div><br>
+  
+</section>
+
+
+<!--
 <footer id="contact" class="row">
   <h1 class="text-center">get in touch</h1>
   <div class="col-xs-10 col-xs-offset-1 text-center">
@@ -225,6 +286,7 @@
    
   </div><br>
 </footer>
+-->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://samiralibabic.github.io/portfolio/js/plugins.js"></script>
