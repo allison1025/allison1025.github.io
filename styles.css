@@ -111,7 +111,7 @@ header {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  min-height: 500px;
+  min-height: 300px;
 }
 
 .navbar,
@@ -119,6 +119,7 @@ header {
   background-color: white !important;
   border: none !important;
   padding: 1rem 1rem !important;
+  padding-bottom: 0.1px !important;
 }
 
 .navbar-nav > li > a:link,
@@ -241,7 +242,8 @@ header {
 }
 
 #intro h3 {
-  margin: 2rem;
+  margin: 0;
+  font-weight: bold;
 }
 
 img {
@@ -251,13 +253,14 @@ img {
 
 #intro p {
   padding: 1rem 2rem;
-  font-size: 1.8rem;
+  font-size: 16px;
   text-align: center;
+  margin:0;
 }
 
 @media (max-width: 1024px) {
   #intro p {
-    font-size: 1.5rem;
+    font-size: 16px;
   }
   #intro h1 {
     font-size: 0.7rem;
@@ -270,7 +273,7 @@ img {
 
 @media (max-width: 768px) {
   #intro p {
-    font-size: 1.4rem;
+    font-size: 16px;
     padding: 10px;
   }
 }
@@ -293,10 +296,11 @@ img {
 }
 
 /* Latest projects */
-
 #projects {
   background-color: #f8f8f8;
-  padding: 2rem 2rem;
+  /*padding: 2rem 2rem;*/
+  padding-top: 6rem;
+  padding-bottom: 3rem;
   border-bottom: 1px solid #e7e7e7;
 }
 
@@ -309,6 +313,15 @@ h3 {
   object-position: top;
 }
 
+#projects h3 {
+	padding-top: 3rem;
+	font-weight: bold;
+}
+
+#myBtnContainer {
+	text-align: center;
+}
+
 /* Contact */
 
 #contact {
@@ -317,28 +330,34 @@ h3 {
   padding: 3rem 0;
 }
 
+#contact h3 {
+	font-weight: bold;
+}
+
+#contact p {
+  font-size: 18px;
+  margin-bottom: 2rem;
+  font-style:italic;
+}
+
 #contact i,
 #contact .glyphicon,
 #contact img {
   padding: 10px 10px;
-  font-size: 30px;
+  font-size: 14px;
   margin-bottom: 30px;
 }
 
-#contact p {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-}
 
 @media (max-width: 1024px) {
   #contact p {
-    font-size: 1.5rem;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 768px) {
   #contact p {
-    font-size: 1.4rem;
+    font-size: 10px;
   }
 }
 
@@ -479,9 +498,17 @@ div.social-link {
   position: relative;
   margin: 0 auto;
   text-align: center;
-   display: flex;
+  display: flex;
   justify-content: center;
 }
+
+.video-gallery{
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 0px;
+ /* min-height: 220px;*/
+}
+
 
 .video-gallery .gallery-item {
   position: relative;
@@ -490,8 +517,11 @@ div.social-link {
   margin: 10px 1%;
   text-align: left;  
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
   height: 200px;
+	
+   display:none;
+   transform: scale(.2,.2);
 }
 
 .video-gallery .gallery-item img {
@@ -499,7 +529,7 @@ div.social-link {
   display: block;
   opacity: .45; 
   height: 310px;
-  max-width: 500%;
+  max-width: 700%;
   transition: opacity 0.45s, transform 0.35s;
   transform: translate3d(-23px, 0, 0);
   backface-visibility: hidden;
@@ -523,7 +553,7 @@ div.social-link {
 
 .video-gallery .gallery-item h2 {
   font-weight: 300;
-  font-size: 150%;
+  font-size: 100%;
   overflow: hidden;
   padding: 0.5em 0;
 }
@@ -538,8 +568,7 @@ div.social-link {
 
 .video-gallery .gallery-item p {
   letter-spacing: 1px;
-  font-size: 60%;
-
+  font-size: 10px;
   padding: 1em 0;
   opacity: 0;
   transition: opacity 0.35s, transform 0.35s;
@@ -561,7 +590,7 @@ div.social-link {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 15%;
+  width: 30%;
   height: 1px;
   background: black;
   
@@ -576,4 +605,22 @@ div.social-link {
 .video-gallery .gallery-item:hover p {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+  font-size: 10px;
+}
+
+
+
+.video-gallery .show {
+  display:block;
+  animation: enter .3s forwards;
+}
+
+@keyframes enter{
+  0{
+   transform: scale(.2,.2);
+  }
+  100%{
+    transform: scale(1,1);
+     
+  }
 }
