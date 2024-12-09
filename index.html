@@ -51,7 +51,10 @@
 </script> 
 	
 <script>
-filterSelection("all") // Execute the function and show all columns
+document.addEventListener("DOMContentLoaded", function() {
+    filterSelection("all");
+});
+	
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("gallery-item");
