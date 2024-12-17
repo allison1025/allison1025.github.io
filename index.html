@@ -1,216 +1,291 @@
 <!doctype html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>allison yih</title>
-    <meta name="description" content="personal portfolio">
-    <meta name="google-site-verification" content="733BaLW9Mq9DSQNjtf13g_-JLqqxe0UJo7D8dnjmzd0" />
-    
-    <!-- stylesheets -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href="styles.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>allison yih</title>
+  <meta name="description" content="personal portfolio">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="733BaLW9Mq9DSQNjtf13g_-JLqqxe0UJo7D8dnjmzd0" />
+
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://samiralibabic.github.io/portfolio/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      /* Navigation smooth scroll */
+      $(function () {
+        $('a[href*="#"]:not([href="#"])').click(function () {
+          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top - 30
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+
+      /* Change menu background on scrolling */
+      $(document).scroll(function () {
+        if ($(document).scrollTop() > 100) {
+          $("nav").addClass("navbar-scrolled");
+        } else {
+          $("nav").removeClass("navbar-scrolled");
+        }
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      filterSelection("all");
+    });
+
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("gallery-item");
+      if (c == "all") c = "";
+      // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+
+    // Show filtered elements
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+          element.className += " " + arr2[i];
+        }
+      }
+    }
+
+    // Hide elements that are not selected
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  </script>
+
 </head>
 
 <body>
-    <header id="landing">
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-items">
-                        <span class="sr-only"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse navbar-right" id="main-menu-items">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#intro">About</a></li>
-                        <li><a href="#projects">Work</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div class="hero-text-box">
-            <h1 class="name">
-                <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/favicon.png" alt="Personal Portfolio Logo">
-            </h1>
-            <h2 id="main-subheading"><em>San Francisco-based data scientist and developer</em></h2>
+  <header id="landing">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-items"
+            aria-expanded="false">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
+        <div class="collapse navbar-collapse navbar-right" id="main-menu-items">
+          <ul class="nav navbar-nav">
+            <li><a href="#intro">About</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-text-box">
+      <h1 class="name"> <img
+          src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/favicon.png"
+          alt="Personal Portfolio Logo"></h1>
 
-    </header>
+      <h2 id="main-subheading"><i> San Francisco-based data scientist and developer </i></h2>
+    </div>
+  </header>
 
-    <!--intro section-->
-    <main>
-        <section id="intro" class="row">
-            <div class="col-sm-6">
-                <h3>hello, i'm allison - nice to meet you!!</h3>
-                <p>i'm a data scientist passionate about driving meaningful impact through analytics.</p>
-                <p>i enjoy learning new things every day and challenging myself, from reading about human behavior to training for my next ultramarathon swim.</p>
-                <p>i'm always eager to <a href="#contact" target = "_self">connect</a> with people, so feel free to reach out if you'd like to chat!!</p>
+  <section id="intro" class="row">
+    <div class="col-sm-6 col-md-6 col-lg-6">
+      <h3><span></span>
+        <br>hello, i'm allison - nice to meet you!!</br>
+      </h3>
+
+      <p style="text-align: left">
+        i'm a data scientist passionate about driving meaningful impact through analytics.
+      </p>
+
+      <p style="text-align: left">
+        i enjoy learning new things every day and challenging myself, from reading about human behavior to training for
+        my next ultramarathon swim.
+      </p>
+
+      <p style="text-align: left"> i'm always eager to <a href="#contact" target="_self">connect</a> with people, so
+        feel free to reach out if you'd like to chat!! </p>
+    </div>
+
+
+    <div class="col-sm-6 col-md-6 col-lg-6">
+      <img class="intro" src="https://github.com/allison1025/allison1025.github.io/blob/master/me.png?raw=true"></img>
+
+    </div>
+  </section>
+
+  <section id="projects" class="row">
+    <h3 class="text-center">some projects i've built</h3><br>
+
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')"> show all</button>
+      <button class="btn" onclick="filterSelection('data')"> data science </button>
+      <button class="btn" onclick="filterSelection('dev')"> full-stack </button>
+      <button class="btn" onclick="filterSelection('design')"> design </button>
+    </div>
+
+    <div class="video-gallery">
+
+      <div class="gallery-item data">
+        <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/covid-map.png" />
+        <div class="gallery-item-caption">
+          <div>
+            <h2>COVID-19 Community Risk Predictor </h2>
+            <p> A machine Learning model simulating health intervention programs' effectiveness on neighbourhood disease
+              vulnerability</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item data dev">
+        <a href="https://github.com/allison1025/breadbot" target="_blank" style="text-decoration: none;">
+          <img
+            src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/refs/heads/master/breadbot_chart.png" />
+          <div class="gallery-item-caption">
+            <div>
+              <h2>Breadbot </h2>
+              <p>Automated Waste Inventory Tracker</p>
             </div>
-            <div class="col-sm-6">
-                <img class="intro" src="https://github.com/allison1025/allison1025.github.io/blob/master/me.png?raw=true">
+          </div>
+        </a>
+      </div>
+
+      <div class="gallery-item data dev">
+        <a href="https://drive.google.com/file/d/1mb_ErEFwdPg71Yq9ZimfaA9A-OFAOIvs/view?usp=sharing" target="_blank"
+          style="text-decoration: none;">
+          <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/cyplot.png" />
+          <div class="gallery-item-caption">
+            <div>
+              <h2>CyPlot </h2>
+              <p>Protein data visualization tool with online plot viewing + downloading functionalities </p>
             </div>
-        </section>
+          </div>
+        </a>
+      </div>
 
+      <div class="gallery-item design">
+        <img
+          src="https://github.com/allison1025/allison1025.github.io/blob/master/Screen%20Shot%202022-03-31%20at%2012.32.11%20PM.png?raw=true" />
+        <div class="gallery-item-caption">
+          <div>
+            <h2>The Michigan Daily </h2>
+            <p>recruitment flyer </p>
+          </div>
+        </div>
+      </div>
 
-        <!--projects section-->
-        <section id="projects" class="row">
-            <h3 class="text-center">some projects i've built</h3>
-            
-            <div id="myBtnContainer">
-                <button class="btn active" onclick="filterSelection('all')">show all</button>
-                <button class="btn" onclick="filterSelection('data')">data science</button>
-                <button class="btn" onclick="filterSelection('dev')">full-stack</button>
-                <button class="btn" onclick="filterSelection('design')">design</button>
+    </div> <!-- end first row -->
+
+    <div class="video-gallery">
+
+      <div class="gallery-item design">
+        <a href="https://www.instagram.com/michigandaily/p/CMKkVEhMOt_/?img_index=4" target="_blank"
+          style="text-decoration: none;">
+
+          <img
+            src="https://github.com/allison1025/allison1025.github.io/blob/master/Screen%20Shot%202022-03-31%20at%2012.45.34%20PM.png?raw=true" />
+          <div class="gallery-item-caption">
+            <div>
+              <h2>The Michigan Daily</h2>
+              <p>news infographic</p>
             </div>
-        
-            <!-- First Row -->
-            <div class="video-gallery">
-                <div class="gallery-item data show">
-                    <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/covid-map.png" alt="COVID-19 Risk Map" />
-                    <div class="gallery-item-caption">
-                        <div>
-                            <h2>COVID-19 Community Risk Predictor</h2>
-                            <p>A machine Learning model simulating health intervention programs' effectiveness on neighbourhood disease vulnerability</p>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="gallery-item data dev show">
-                    <a href="https://github.com/allison1025/breadbot" target="_blank" style="text-decoration: none;">
-                        <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/refs/heads/master/breadbot_chart.png" alt="Breadbot Chart" />
-                        <div class="gallery-item-caption">
-                            <div>
-                                <h2>Breadbot</h2>
-                                <p>Automated Waste Inventory Tracker</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-        
-                <div class="gallery-item data dev show">
-                    <a href="https://drive.google.com/file/d/1mb_ErEFwdPg71Yq9ZimfaA9A-OFAOIvs/view?usp=sharing" target="_blank" style="text-decoration: none;">
-                        <img src="https://raw.githubusercontent.com/allison1025/allison1025.github.io/master/cyplot.png" />
-                        <div class="gallery-item-caption">
-                            <div>
-                                <h2>CyPlot</h2>
-                                <p>Protein data visualization tool with online plot viewing + downloading functionalities</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-        
-                <div class="gallery-item design show">
-                    <img src="https://github.com/allison1025/allison1025.github.io/blob/master/Screen%20Shot%202022-03-31%20at%2012.32.11%20PM.png?raw=true" />
-                    <div class="gallery-item-caption">
-                        <div>
-                            <h2>The Michigan Daily</h2>
-                            <p>recruitment flyer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Second Row -->
-            <div class="video-gallery">
-                <div class="gallery-item design show">
-                    <a href="https://www.instagram.com/michigandaily/p/CMKkVEhMOt_/?img_index=4" target="_blank" style="text-decoration: none;">
-                        <img src="https://github.com/allison1025/allison1025.github.io/blob/master/Screen%20Shot%202022-03-31%20at%2012.45.34%20PM.png?raw=true" />
-                        <div class="gallery-item-caption">
-                            <div>
-                                <h2>The Michigan Daily</h2>
-                                <p>news infographic</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-        
-                <div class="gallery-item data design show">
-                    <img src="https://github.com/allison1025/allison1025.github.io/blob/master/Screen%20Shot%202020-07-08%20at%203.36.36%20PM.png?raw=true" />
-                    <div class="gallery-item-caption">
-                        <div>
-                            <h2>Blue Shield Newsletter Revamp</h2>
-                            <p>A data-driven redesign of Blue Shield's competitive intelligence communications</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            <h2></h2>
-            <p class="text-center">more details regarding my work experiences can be found on my <a href="https://drive.google.com/file/d/1OEsIx_bAPAJHQegKfOR8tm0QZqbjJKLY/view?usp=sharing" target="_blank">resume</a></p>
-        </section>
+          </div>
+        </a>
+      </div>
 
 
+      <div class="gallery-item data design">
+        <img
+          src="https://github.com/allison1025/allison1025.github.io/blob/master/Screen%20Shot%202020-07-08%20at%203.36.36%20PM.png?raw=true" />
+        <div class="gallery-item-caption">
+          <div>
+            <h2>Blue Shield Newsletter Revamp </h2>
+            <p>A data-driven redesign of Blue Shield's competitive intelligence communications</p>
+          </div>
+        </div>
+      </div>
 
-        <!--contact section-->
-        <section id="contact" class="row">
-            <h3 class="text-center">get in touch</h3>
-            <div class="col-xs-10 col-xs-offset-1 text-center">
-                <p>i'd love to connect with you!! :)</p>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/allisonyih" target="_blank"><i class="fa fa-linkedin fa-xs"></i></a>
-                    <a href="mailto:allieyih@gmail.com" target="_blank"><i class="fa fa-envelope fa-xs"></i></a>
-                    <a href="https://github.com/allison1025" target="_blank"><i class="fa fa-github fa-xs"></i></a>
-                </div>
-            </div>
-        </section>
-    </main>
+    </div>
+    <h2></h2>
+    <p style="text-align:center">more details regarding my work experiences can be found on my <a
+        href="https://drive.google.com/file/d/1OEsIx_bAPAJHQegKfOR8tm0QZqbjJKLY/view?usp=sharing"
+        target="_blank">resume</a></p>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 30,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
+  </section>
 
-            const buttons = document.querySelectorAll('#myBtnContainer .btn');
-            const items = document.querySelectorAll('.gallery-item');
+  <section id="contact" class="row">
+    <h3 class="text-center">get in touch</h3>
+    <div class="col-xs-10 col-xs-offset-1 text-center">
+      <p>i'd love to connect with you!! :)
+      </p>
 
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const filter = button.dataset.filter;
-                    
-                    buttons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
+      <div class="social-link">
+        <a href="https://linkedin.com/in/allisonyih" target="_blank"><i class="fa fa-linkedin fa-xs"></i></a>
+      </div>
 
-                    items.forEach(item => {
-                        if (filter === 'all' || item.classList.contains(filter)) {
-                            item.classList.add('show');
-                        } else {
-                            item.classList.remove('show');
-                        }
-                    });
-                });
-            });
+      <div class="social-link">
+        <a href="mailto:allieyih@gmail.com" target="_blank"><i class="fa fa-envelope fa-xs"></i></a>
+      </div>
 
-            // Navbar scroll effect
-            window.addEventListener('scroll', () => {
-                const nav = document.querySelector('nav');
-                if (window.scrollY > 100) {
-                    nav.classList.add('navbar-scrolled');
-                } else {
-                    nav.classList.remove('navbar-scrolled');
-                }
-            });
-        });
-    </script>
+      <div class="social-link">
+        <a href="https://github.com/allison1025" target="_blank"><i class="fa fa-github fa-xs"></i></a>
+      </div>
+
+    </div><br>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://samiralibabic.github.io/portfolio/js/plugins.js"></script>
+  <script src="https://samiralibabic.github.io/portfolio/js/main.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+
 </body>
+
 </html>
